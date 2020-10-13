@@ -1,3 +1,5 @@
+USE msis_triage;
+
 CREATE TABLE Person (
 PersonID  INT,
 firstName VARCHAR (20),
