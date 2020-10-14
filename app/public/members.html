@@ -37,6 +37,60 @@
       </div>
     </nav>
 
+    <title>Member Reports</title>
+  </head>
+
+  <body>
+
+
+    <div class="container-fluid">
+      <div class="row" id="triagePage">
+        <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
+          <form method="post" v-on:submit.prevent="handleNewPtForm">
+            <h3>Member View</h3>
+            <h3>Create New Member Record</h3>
+
+            <div class="form-group">
+            <label for="newPtFirstName">First Name</label>
+            <input type="text" v-model="newPtForm.firstName" class="form-control" id="newPtFirstName" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="newPtLastName">Last Name</label>
+            <input type="text" v-model="newPtForm.lastName" class="form-control" id="newPtLastName" placeholder="Doe">
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">DOB</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtSexAtBirth">Sex at Birth</label>
+            <select class="form-control" v-model="newPtForm.sexAtBirth" id="newPtSexAtBirth">
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Other/Unknown</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Create</button>
+
+          </form>
+
+          <h3>List of all patients</h3>
+
+          <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
+
+            <span class="lastName">{{ pt.last_name }}</span>,
+            <span clas="firstName">{{ pt.first_name }}</span>
+            <span class="birthDate float-right">{{ pt.Gender }}</span>
+            <span class="birthDate float-right">{{ pt.DOB}}</span>
+            <span class="birthDate float-right">{{ pt.Address }}</span>
+            <span class="birthDate float-right">{{ pt.Email }}</span>
+            <span class="birthDate float-right">{{ pt.radioNum }}</span>
+            <span class="birthDate float-right">{{ pt.Position }}</span>
+            <span class="birthDate float-right">{{ pt.isactive }}</span>
+            <span class="birthDate float-right">{{ pt.Start_Date }}</span>
+          </div>
+
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
