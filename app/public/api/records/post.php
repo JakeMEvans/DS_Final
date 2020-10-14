@@ -28,7 +28,7 @@ $stmt->execute([
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['Gender'],
-  $_POST['DOB']
+  $_POST['Address']
 ]);
 
 // If needed, get auto-generated PK from DB

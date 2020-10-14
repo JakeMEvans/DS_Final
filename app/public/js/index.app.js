@@ -17,10 +17,11 @@ var app = new Vue({
   methods: {
     newPtData() {
       return {
+        personID: "",
         firstName: "",
         lastName: "",
-        dob: "",
-        sexAtBirth: ""
+        Gender: "",
+        Address: ""
       }
     },
     handleNewPtForm( evt ) {

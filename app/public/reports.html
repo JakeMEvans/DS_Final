@@ -69,7 +69,9 @@
           <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
             <span class="lastName">{{ pt.lastName }}</span>,
             <span clas="firstName">{{ pt.firstName }}</span>
-            <span class="birthDate float-right">{{ pt.dob }}</span>
+            <span class="birthDate float-right">{{ pt.Gender}}</span>
+            <span class="birthDate float-right">{{ pt.Address}}</span>
+
           </div>
 
           <!-- <button v-on:click="yell()">Click Me!</button> -->
