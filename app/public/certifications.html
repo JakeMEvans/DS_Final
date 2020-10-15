@@ -8,8 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- my custom CSS goes here -->
-    <link rel="stylesheet" href="css/styles.css">
-
+    <link rel="stylesheet" href="css/style.css">
     <title>Our Members</title>
   </head>
 
@@ -65,29 +64,36 @@
           <div class="form-group">
             <label for="newcertSexAtBirth">Sex at Birth</label>
             <select class="form-control" v-model="newcertForm.sexAtBirth" id="newcertSexAtBirth">
-              <ocertion value="M">Male</ocertion>
-              <ocertion value="F">Female</ocertion>
-              <ocertion value="O">Other/Unknown</ocertion>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Other/Unknown</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary">Create</button>
 
           </form>
 
-          <h3>List of all patients</h3>
+          <h3>List of all Certifications</h3>
 
-          <div class="patientCard" v-for="cert in certList" v-on:click="activecert = cert">
+          <div class="patientCard" v-for="cert in certList" >
+            <!-- #v-on:click="activecert = cert" -->
 
-            <span class="lastName">{{ cert.CertificationID }}</span>,
+            <span class="lastName">{{ cert.CertificationID }}</span>
+            <span class="lastName">{{ cert.certAgency }}</span>
+            <span class="lastName">{{ cert.certificationName }}</span>
+            <span class="lastName">{{ cert.expirationDate }}</span>
 
           </div>
+        </div>
+      </div>
+    </div>
 
 
-  <scricert src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></scricert>
-  <scricert src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></scricert>
-  <scricert src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></scricert>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-  <scricert src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></scricert>
-  <scricert src="js/index.app.js"></scricert>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/cert_index.app.js"></script>
     </body>
   </html>

@@ -1,7 +1,15 @@
-var app = new Vue2({
+var app = new Vue({
   el: '#certtriagePage',
-  certdata: {
-    certList: [],
+  data: {
+    certList: [
+      {
+        CertificationID: "",
+        certAgency: "",
+        certificationName: "",
+        expirationDate: ""
+
+      }
+    ],
     activecert: null,
     triageForm: {
       priority: null,
@@ -20,7 +28,7 @@ var app = new Vue2({
         CertificationID: "",
         certAgency: "",
         certificationName: "",
-        expirationDate: "",
+        expirationDate: ""
 
       }
     },
@@ -57,7 +65,8 @@ var app = new Vue2({
     }
   },
   created() {
-    fetch("api/records/")
+    console.log("Vue app was created");
+    fetch("api/records/cert_index.php")
     .then( response => response.json() )
     .then( json => {
       this.certList = json;
