@@ -37,46 +37,60 @@
     </nav>
 
     <main>
+      <h3>Member View</h3>
         <div id="members">
           <form method="post" id="newMemberForm" v-on:submit.prevent="handleNewMemberForm">
-            <h3>Member View</h3>
-
             <div class="form-group">
-            <label for="newMemberFirstName">First Name</label>
-            <input type="text" v-model="newMemberForm.firstName" class="form-control" id="newMemberFirstName" placeholder="Jane">
-          </div>
-          <div class="form-group">
-            <label for="newMemberLastName">Last Name</label>
-            <input type="text" v-model="newMemberForm.lastName" class="form-control" id="newMemberLastName" placeholder="Doe">
-          </div>
-          <div class="form-group">
-            <label for="newMemberStationNum">Station Number</label>
-            <input type="number" v-model="newMemberForm.stationNum" class="form-control" id="newMemberStationNum" placeholder="10">
-          </div>
-          <div class="form-group">
-            <label for="NewMemberRadioNum">Radio Number</label>
-            <input type="text" v-model="newMemberForm.radioNum" id="newMemberRadioNum" placeholder="#b10">
-          </div>
-          <button type="submit" class="btn btn-primary" id ="submitNewMember">Create</button>
+              <label for="newMemberFirstName">First Name</label>
+              <input type="text" v-model="newMemberForm.firstName" class="form-control" id="newMemberFirstName" placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label for="newMemberLastName">Last Name</label>
+              <input type="text" v-model="newMemberForm.lastName" class="form-control" id="newMemberLastName" placeholder="Doe">
+            </div>
+            <div class="form-group">
+              <label for="newMemberStationNum">Station Number</label>
+              <input type="number" v-model="newMemberForm.stationNum" class="form-control" id="newMemberStationNum" placeholder="10">
+            </div>
+            <div class="form-group">
+              <label for="NewMemberRadioNum">Radio Number</label>
+              <input type="text" v-model="newMemberForm.radioNum" id="newMemberRadioNum" placeholder="#b10">
+            </div>
+            <div class="form-group">
+              <label for="NewMemberIsActive">Is Active?</label>
+              <input type="radio" v-model="newMemberForm.isActive" id="Yes" value ="Yes">
+              <label for "Yes"> Yes </label>
+              <input type="radio" v-model="newMemberForm.isActive" id="No" value ="No">
+              <label for "No"> No </label>
+            </div>
+            <button type="submit" class="btn btn-primary" id ="submitNewMember">Create</button>
 
           </form>
 
           <h3>List of all Members</h3>
+          <table class="memberTable" id="memberTable">
+            <thead>
+              <tr data-sort-method="thead">
+                  <th> First Name </th>
+                  <th> Last Name </th>
+                  <th> Station Number </th>
+                  <th> Radio Number </th>
+                  <th> Active </th>
+              </tr>
+            </thead>
+            <tbody = id"memberTableBody" v-for" member in memberList">
+              <tr>
+                <td class ="firstName"> First Name: {{member.firstName}}</td>
+                <td class="lastName"> Last Name: {{member.lastName}}</td>
+                <td class ="stationNum"> Station Number: {{member.stationNum}}</td>
+                <td class ="radioNum"> Radio Number: {{member.radioNum}}</td>
+                <td class="isActive"> Is Active: {{member.isActive}}</td>
+              </tr>
+            </tbody>
+          </table>
 
-
-          <div class="" v-for="pt in ptList" v-on:click="activePt = pt">
-
-            <span class="lastName">{{ pt.last_name }}</span>,
-            <span clas="firstName">{{ pt.first_name }}</span>
-            <span class="birthDate float-right">{{ pt.Gender }}</span>
-            <span class="birthDate float-right">{{ pt.DOB}}</span>
-            <span class="birthDate float-right">{{ pt.Address }}</span>
-            <span class="birthDate float-right">{{ pt.Email }}</span>
-            <span class="birthDate float-right">{{ pt.radioNum }}</span>
-            <span class="birthDate float-right">{{ pt.Position }}</span>
-            <span class="birthDate float-right">{{ pt.isactive }}</span>
-            <span class="birthDate float-right">{{ pt.Start_Date }}</span>
           </div>
+        </main>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -85,5 +99,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/index.app.js"></script>
+  <script src="js/fetchmember.js"></script>
     </body>
   </html>
