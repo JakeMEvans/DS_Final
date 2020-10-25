@@ -49,12 +49,32 @@
               <input type="text" v-model="newMemberForm.lastName" class="form-control" id="newMemberLastName" placeholder="Doe">
             </div>
             <div class="form-group">
-              <label for="newMemberStationNum">Station Number</label>
-              <input type="number" v-model="newMemberForm.stationNum" class="form-control" id="newMemberStationNum" placeholder="10">
+              <label for="newMemberDOB">DOB</label>
+              <input type="text" v-model="newMemberForm.DOB" class="form-control" id="newMemberDOB" placeholder="1980-11-07">
+            </div>
+            <div class="form-group">
+              <label for="newMemberAddress">Address</label>
+              <input type="text" v-model="newMemberForm.Address" class="form-control" id="newMemberAddress" placeholder="123 Main Street">
+            </div>
+            <div class="form-group">
+              <label for="newMemberEmail">Email</label>
+              <input type="text" v-model="newMemberForm.Email" class="form-control" id="newMemberEmail" placeholder="jdoe@gmail.com">
+            </div>
+            <div class="form-group">
+              <label for="newMemberPosition">Position</label>
+              <input type="text" v-model="newMemberForm.Position" class="form-control" id="newMemberPosition" placeholder="EMT">
+            </div>
+            <div class="form-group">
+              <label for="newMemberstartDate">Start Date</label>
+              <input type="text" v-model="newMemberForm.startDate" class="form-control" id="newMemberstartDate" placeholder="2010-11-07">
             </div>
             <div class="form-group">
               <label for="NewMemberRadioNum">Radio Number</label>
               <input type="text" v-model="newMemberForm.radioNum" id="newMemberRadioNum" placeholder="#b10">
+            </div>
+            <div class="form-group">
+              <label for="newMemberStationNum">Station Number</label>
+              <input type="number" v-model="newMemberForm.stationNum" class="form-control" id="newMemberStationNum" placeholder="10">
             </div>
             <div class="form-group">
               <label for="NewMemberIsActive">Is Active?</label>
@@ -73,8 +93,13 @@
               <tr data-sort-method="thead">
                   <th> First Name </th>
                   <th> Last Name </th>
-                  <th> Station Number </th>
+                  <th> DOB </th>
+                  <th> Address </th>
+                  <th> Email </th>
+                  <th> Position </th>
+                  <th> StartDate </th>
                   <th> Radio Number </th>
+                  <th> Station Number </th>
                   <th> Active </th>
               </tr>
             </thead>
@@ -82,8 +107,13 @@
               <tr>
                 <td class ="firstName"> First Name: {{member.firstName}}</td>
                 <td class="lastName"> Last Name: {{member.lastName}}</td>
-                <td class ="stationNum"> Station Number: {{member.stationNum}}</td>
+                <td class="DOB"> DOB: {{member.DOB}}</td>
+                <td class="Address"> Address: {{member.Address}}</td>
+                <td class="Email"> Last Name: {{member.Email}}</td>
+                <td class="Position"> Position: {{member.Position}}</td>
+                <td class="startDate"> Start Date: {{member.startDate}}</td>
                 <td class ="radioNum"> Radio Number: {{member.radioNum}}</td>
+                <td class ="stationNum"> Station Number: {{member.stationNum}}</td>
                 <td class="isActive"> Is Active: {{member.isActive}}</td>
               </tr>
             </tbody>
