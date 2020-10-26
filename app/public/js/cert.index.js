@@ -31,7 +31,7 @@ var app = new Vue({
 
     },
     createcert(){
-        this.newcert.CertificationID = (this.newcert.certAgency).toLowerCase();
+        this.newcert.CertificationID = (this.newcert.CertificationID).toLowerCase();
         fetch('api/certifications/certificationpost.php', {
           method:'POST',
           body: JSON.stringify(this.newcert),
@@ -50,7 +50,9 @@ var app = new Vue({
       },
       newcertData() {
         return {
-          certAgency: ""
+          certAgency: "",
+          certificationName: "",
+          expirationDate: ""
         }
       }
   },

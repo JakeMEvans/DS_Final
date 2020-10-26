@@ -70,11 +70,29 @@
 
               </div><br/>
 
-              <form method = "post" v-on:submit.prevent="createcert()" id="newCommentForm">
+              <form method = "post" v-on:submit.prevent="createcert()" id="newCertForm">
                 <div class="certs">
-                  <label for="comment text">Add Comment Here</label>
-                  <input type="text" v-model="newcert.certAgency" class="form-control" id="certAgency" placeholder="This is a Cert Agency">
+                  <label for="certification id">Add ID Here</label>
+                  <input type="number" v-model="newcert.CertificationID" class="form-control" id="certId" placeholder="cert id">
                 </div><br/>
+
+              <form method = "post" v-on:submit.prevent="createcert()" id="newCertForm">
+                <div class="certs">
+                  <label for="certification agency">Add Agency Here</label>
+                  <input type="text" v-model="newcert.certAgency" class="form-control" id="certAgency" placeholder="cert agency">
+                </div><br/>
+
+                <div class="certs">
+                  <label for="certification name">Add Nme Here</label>
+                  <input type="text" v-model="newcert.certificationName" class="form-control" id="certName" placeholder="cert name">
+                </div><br/>
+
+                <div class="certs">
+                  <label for="certification expdate">Add Expiration Date Here</label>
+                  <input type="date" v-model="newcert.expirationDate" class="form-control" id="certExpdate" placeholder="cert exp date">
+                </div><br/>
+
+
                 <input type="submit" value="Create cert" class="button"  id="submitNewCert">
               </form>
             </div>
