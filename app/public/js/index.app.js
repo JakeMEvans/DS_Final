@@ -1,69 +1,127 @@
 var app = new Vue({
-  el: '#triagePage',
+  el: '#ocfrPage',
   data: {
-    ptList: [],
-    activePt: null,
-    triageForm: {
-      priority: null,
-      symptoms: ''
-    },
-    newPtForm: {}
+      certList: [],
+      cmList: [],
+      memberList: [],
+      newCertificationForm: {},
+      newMemberForm:{}
   },
-  computed: {
-    activePtName() {
-      return this.activePt ? this.activePt.lastName + ', ' + this.activePt.firstName : ''
-    }
-  },
+
   methods: {
-    newPtData() {
+    newCertificationData() {
       return {
-        personID: "",
-        firstName: "",
-        lastName: "",
-        Gender: "",
-        Address: ""
+        CertificationID: "",
+        certAgency: "",
+        certificationName: "",
+        expirationDate: "",
       }
     },
-    handleNewPtForm( evt ) {
-      // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
 
-      // TODO: Validate the data!
+    newMemberData() {
+      return {
+        personID: "",
+        firstName:"",
+        lastName: "",
+        DOB: "",
+        Address: "",
+        Email: "",
+        Position: "",
+        startDate: "",
+        radioNum: "",
+        stationNum: "",
+        isActive: "",
+      }
+    },
 
-      fetch('api/records/post.php', {
-        method:'POST',
-        body: JSON.stringify(this.newPtForm),
+    handleNewCertificationData: ( evt ) (
+      console.log("Certication form submitted");
+
+      fetch('api/certifications/certificationpost.php', {
+        method: 'POST',
+        body: JSON.stringify(this.newCertificationForm),
         headers: {
-          "Content-Type": "application/json; charset=utf-8"
+          "Content-Type": "application/json; charset=utf-8",
+          "Accept": "application/json"
         }
       })
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        // TODO: test a result was returned!
-        this.ptList.push(json[0]);
+        this.certList =json;
+        this.newCertificaionForm = this.newCertificationData();
       });
-
-      console.log("Creating (POSTing)...!");
-      console.log(this.newPtForm);
-
-      this.newPtForm = this.newPtData();
     },
-    handleTriageForm( evt ) {
-      console.log("Form submitted!");
 
-      this.triageForm.pt = this.activePt;
-      console.log(this.triageForm);
-
+    handleNewMemberForm ( evt ) {
+      console.log("Member form submitted!");
+      fetch('api/members/memberpost.php', {
+        method: 'POST',
+        body: JSON.stringify(this.newMemberForm),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Accept": "application/json"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => {
+        console.log("Returned from post:", json);
+        this.memberList = json;
+        this.newMemberForm = this.newMemberData();
+      });
     }
   },
+
   created() {
-    fetch("api/records/")
+    fetch("api/certifications/")
     .then( response => response.json() )
     .then( json => {
-      this.ptList = json;
+      this.certList = json;
 
       console.log(json)}
     );
-    this.newPtForm = this.newPtData();
+
+    this.newCertificationForm = this.newCertificationData();
   }
 })
+    fetch("api/certifications/certificationindex.php")
+    .then( respose => response.json() )
+    .then( json => {
+        this.cmList = json;
+
+        comsole.log(json)}
+      );
+
+      fetch("api/members/memberindex.php", {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Accept": "application/json"
+        }
+      })
+      .then( respose => response.json() )
+      .then( json => {
+        this.memberList = json;
+
+        console.log(json);
+      );
+
+      fetch("api/members/memberpost.php")
+        .then( response => response.json() )
+        .then( json => {
+          this.memberList = json;
+
+          console.log(json)}
+        );
+
+        fetch("api/members/memberpost.php")
+        .then( respose => response.json() )
+        .then( json => {
+          this.memberList = json;
+
+          console.log(json)}
+        );
+
+    this.newCertificationForm = this.newCertificationData();
+    this.newMemberForm = this.newMemberData();
+        }
+        })

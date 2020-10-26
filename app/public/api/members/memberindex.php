@@ -12,6 +12,16 @@ $vars = [];
 if (isset($_GET['guid'])) {
   // This is an example of a parameterized query
   $sql = 'SELECT * FROM Person WHERE PersonID = ?';
+  $sql = 'SELECT * FROM Person WHERE firstName = ?';
+  $sql = 'SELECT * FROM Person WHERE lastName = ?';
+  $sql = 'SELECT * FROM Person WHERE DOB = ?';
+  $sql = 'SELECT * FROM Person WHERE Address = ?';
+  $sql = 'SELECT * FROM Person WHERE Email = ?';
+  $sql = 'SELECT * FROM Person WHERE Position = ?';
+  $sql = 'SELECT * FROM Person WHERE startDate = ?';
+  $sql = 'SELECT * FROM Person WHERE radioNum = ?';
+  $sql = 'SELECT * FROM Person WHERE stationNum = ?';
+  $sql = 'SELECT * FROM Person WHERE isActive = ?';
   $vars = [ $_GET['guid'] ];
 }
 
@@ -21,8 +31,9 @@ $stmt->execute($vars);
 $patients = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+$json = json_encode($people, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
 echo $json;
+?>
