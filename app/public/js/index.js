@@ -34,24 +34,24 @@ var app = new Vue({
       }
     },
 
-    handleNewCertificationForm: ( evt ) {
-      console.log("Certication form submitted");
-
-      fetch('api/certifications/certificationpost.php', {
-        method: 'POST',
-        body: JSON.stringify(this.newCertificationForm),
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-          "Accept": "application/json"
-        }
-      })
-      .then( response => response.json() )
-      .then( json => {
-        console.log("Returned from post:", json);
-        this.certList =json;
-        this.newCertificaionForm = this.newCertificationData();
-      });
-    },
+  // handleNewCertificationForm: ( evt ) {
+  //     console.log("Certication form submitted");
+  //
+  //     fetch('api/certifications/certificationpost.php', {
+  //       method: 'POST',
+  //       body: JSON.stringify(this.newCertificationForm),
+  //       headers: {
+  //         "Content-Type": "application/json; charset=utf-8",
+  //         "Accept": "application/json"
+  //       }
+  //     })
+  //     .then( response => response.json() )
+  //     .then( json => {
+  //       console.log("Returned from post:", json);
+  //       this.certList =json;
+  //       this.newCertificaionForm = this.newCertificationData();
+  //     });
+  //   },
 
     handleNewMemberForm ( evt ) {
       console.log("Member form submitted!");
@@ -123,5 +123,5 @@ var app = new Vue({
 
     this.newCertificationForm = this.newCertificationData();
     this.newMemberForm = this.newMemberData();
-        }
+      }
         })
