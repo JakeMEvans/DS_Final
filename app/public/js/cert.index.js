@@ -22,7 +22,7 @@ var app = new Vue({
 
   methods:{
     fetchccert(){
-      fetch('api/certifications/')
+      fetch('api/certifications/certificationindex.php')
       .then(response => response.json())
       .then(json => {
         this.certs=json;
