@@ -34,7 +34,7 @@ var app = new Vue({
       }
     },
 
-    handleNewCertificationData: ( evt ) (
+    handleNewCertificationForm: ( evt ) {
       console.log("Certication form submitted");
 
       fetch('api/certifications/certificationpost.php', {
@@ -89,7 +89,7 @@ var app = new Vue({
     .then( json => {
         this.cmList = json;
 
-        comsole.log(json)}
+        console.log(json)}
       );
 
       fetch("api/members/memberindex.php", {
@@ -102,7 +102,7 @@ var app = new Vue({
       .then( json => {
         this.memberList = json;
 
-        console.log(json);
+        console.log(json)}
       );
 
       fetch("api/members/memberpost.php")
