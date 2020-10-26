@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/style.css">
-
-    <title>OCFR</title>
+    <title>Our Members</title>
   </head>
+
   <body>
     <nav class="navbar navbar-expand-md">
       <a class="navbar-brand" href="#">OCFR App</a>
@@ -36,7 +36,57 @@
       </div>
     </nav>
 
-    
+    <title>Member Reports</title>
+  </head>
+
+  <body>
+
+
+    <div class="container-fluid">
+      <div class="row" id="certtriagePage">
+        <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
+          <form method="post" v-on:submit.prevent="handleNewcertForm">
+            <h3>Certification  View</h3>
+            <h3>Create New Member Certification Record</h3>
+
+            <div class="form-group">
+            <label for="newcertFirstName">First Name</label>
+            <input type="text" v-model="newcertForm.firstName" class="form-control" id="newcertFirstName" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="newcertLastName">Last Name</label>
+            <input type="text" v-model="newcertForm.lastName" class="form-control" id="newcertLastName" placeholder="Doe">
+          </div>
+          <div class="form-group">
+            <label for="newcertDob">DOB</label>
+            <input type="text" v-model="newcertForm.dob" class="form-control" id="newcertDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newcertSexAtBirth">Sex at Birth</label>
+            <select class="form-control" v-model="newcertForm.sexAtBirth" id="newcertSexAtBirth">
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Other/Unknown</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Create</button>
+
+          </form>
+
+          <h3>List of all Certifications</h3>
+
+          <div class="patientCard" v-for="cert in certList" >
+            <!-- #v-on:click="activecert = cert" -->
+
+            <span class="lastName">{{ cert.CertificationID }}</span>
+            <span class="lastName">{{ cert.certAgency }}</span>
+            <span class="lastName">{{ cert.certificationName }}</span>
+            <span class="lastName">{{ cert.expirationDate }}</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -44,13 +94,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="js/index.app.js"></script>
-  </body>
-
-  <footer>
-    Oconee County Fire Rescue &copy; <br>
-    Phone: 800-555-1234 | 123 Main Street, Oconee, GA 32114 <br>
-    Keeping our community safe since 1968
-  </footer>
-
+  <script src="js/cert_index.app.js"></script>
+    </body>
   </html>
