@@ -30,6 +30,9 @@ var app = new Vue({
       });
 
     },
+
+
+
     createcert(){
         this.newcert.CertificationID = (this.newcert.CertificationID).toLowerCase();
         fetch('api/certifications/certificationpost.php', {
@@ -54,11 +57,35 @@ var app = new Vue({
           certificationName: "",
           expirationDate: ""
         }
-      }
-  },
+      },
+
+
+//    del (index) {
+//
+//   this.$delete(this.certs, index);
+// }
+
+
+   del (index) {
+        this.$delete(this.certs, index);
+        fetch('api/certifications/certificationdelete.php', {
+          method:'DELETE',
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+       }
+
+ })
+}
+
+
+
+
+ },
 
   created(){
     this.fetchccert();
 
   }
+
+
 });

@@ -57,12 +57,12 @@
                     </tr>
                   </thead>
 
-                  <tbody  id="certTableBody" v-for = "cert in certs">
+                  <tbody  id="certTableBody" v-for = "item, cert in certs">
                     <tr >
-                      <td >{{ cert.CertificationID }}</td>
-                      <td >{{ cert.certAgency }}</td>
-                      <td >{{ cert.certificationName }}</td>
-                      <td >{{ cert.expirationDate }}</td>
+                      <td > <button @click="del(cert)">X</button>{{ item.CertificationID }} </td>
+                      <td >{{ item.certAgency }}</td>
+                      <td >{{ item.certificationName }}</td>
+                      <td >{{ item.expirationDate }}</td>
                     </tr>
                   </tbody>
               </table>
