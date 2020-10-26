@@ -43,21 +43,21 @@ PRIMARY KEY (CertificationID)
 );
 
 
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (1, 'American Red Cross', 'Certified EMT', '11/19/2024');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (2, 'American Heart Association', 'CPR', '12/27/2022');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (3, 'Athens Technical College', 'Firefighter 1', '6/11/2021');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (4, 'NFPA', 'Certified Fire Inspector', '3/7/2024');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (5, 'NFPA', 'Firefighter 2', '10/23/2022');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (6, 'FSI', 'EMT', '2/11/2024');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (7, 'GPSTC', 'Firefighter 1', '7/10/2021');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (8, 'FFC', 'Firefighter 2', '9/4/2022');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (9, 'MFP', 'CPR', '5/2/2023');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (10, 'KFART', 'Confined Space Rescue', '9/15/2025');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (11, 'SD Miramar', 'Confined Space and Rescue 2', '6/13/2025');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (12, 'IFSAC', 'Driver/Operator', '9/16/2022');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (13, 'NFPA', 'Fire Officer 1', '8/26/2021');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (14, 'Pro Board', 'Fire Officer 2', '8/14/2023');
-insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (15, 'Pro Board', 'Fire Service Instructor', '6/14/2022');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (1, 'American Red Cross', 'Certified EMT', '2024-11-20');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (2, 'American Heart Association', 'CPR', '2022-12-27');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (3, 'Athens Technical College', 'Firefighter 1', '2021-06-01');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (4, 'NFPA', 'Certified Fire Inspector', '2024-03-08');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (5, 'NFPA', 'Firefighter 2', '2022-10-11');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (6, 'FSI', 'EMT', '2024-02-11');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (7, 'GPSTC', 'Firefighter 1', '2021-07-10');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (8, 'FFC', 'Firefighter 2', '2022-09-04');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (9, 'MFP', 'CPR', '2023-05-02');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (10, 'KFART', 'Confined Space Rescue', '2025-09-15');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (11, 'SD Miramar', 'Confined Space and Rescue 2', '2025-06-13');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (12, 'IFSAC', 'Driver/Operator', '2022-09-11');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (13, 'NFPA', 'Fire Officer 1', '2021-08-26');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (14, 'Pro Board', 'Fire Officer 2', '2023-08-14');
+insert into Certification (CertificationID, certAgency, certificationName, expirationDate) values (15, 'Pro Board', 'Fire Service Instructor', '2022-06-14');
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
