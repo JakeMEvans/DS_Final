@@ -90,7 +90,7 @@
 
             <div class="member">
               <label for="newMemberDOB">DOB</label>
-              <input type="text" v-model="newMember.DOB" class="form-control" id="newMemberDOB" placeholder="1980-11-07">
+              <input type="date" v-model="newMember.DOB" class="form-control" id="newMemberDOB" placeholder="1980-11-07">
             </div>
 
             <div class="member">
@@ -115,7 +115,7 @@
 
             <div class="form-group">
               <label for="newMemberstartDate">Start Date</label>
-              <input type="text" v-model="newMember.startDate" class="form-control" id="newMemberstartDate" placeholder="2010-11-07">
+              <input type="date" v-model="newMember.startDate" class="form-control" id="newMemberstartDate" placeholder="2010-11-07">
             </div>
 
             <div class="form-group">
@@ -140,13 +140,73 @@
 
           </form>
 
-          <form method = "post" v-on:submit.prevent="updatemember()" id="updateMemberForm">
-            <div class="members">
-              <label for="newMemberFirstName">Update Member Below</label>
-              <input type="number" v-model="selectedmember" class="form-control" id="updateMemberLastName">
-            </div><br/>
+          <br >
 
+          <form method = "post" v-on:submit.prevent="updateMember()" id="updateMemberForm">
+              <div class="member">
+                <label for="member id">Update Member Below</label>
+                <input type="number" v-model="selectedMember" class="form-control" id="updateMembertId" placeholder="update member id">
+              </div><br/>
+
+
+              <div class="member">
+                <label for="member fname">Add First Name Here</label>
+                <input type="text" v-model="updatedMember.firstName" class="form-control" id="updateMemberfName" placeholder="update member fname">
+              </div><br/>
+
+              <div class="member">
+                <label for="member lname">Add Last Name Here</label>
+                <input type="text" v-model="updatedMember.lastName" class="form-control" id="updateMemberlName" placeholder="update member lname">
+              </div><br/>
+
+              <div class="member">
+                <label for="member DOB">Add DOB Here</label>
+                <input type="date" v-model="updatedMember.DOB" class="form-control" id="update DOB" placeholder="update DOB">
+              </div><br/>
+
+              <div class="member">
+                <label for="member address">Add Address Here</label>
+                <input type="text" v-model="updatedMember.Address" class="form-control" id="update adress" placeholder="update member address">
+              </div><br/>
+
+              <div class="member">
+                <label for="member email">Add Email Here</label>
+                <input type="text" v-model="updatedMember.Email" class="form-control" id="update email" placeholder="update member email">
+              </div><br/>
+
+              <div class="member">
+                <label for="member position">Add Posiition Here</label>
+                <input type="text" v-model="updatedMember.Position" class="form-control" id="update position" placeholder="update member position">
+              </div><br/>
+
+              <div class="member">
+                <label for="member start date">Add Start Date Here</label>
+                <input type="date" v-model="updatedMember.startDate" class="form-control" id="update startDate" placeholder="update member startDate">
+              </div><br/>
+
+              <div class="member">
+                <label for="member radioNum">Add Radio Number Here</label>
+                <input type="number" v-model="updatedMember.radioNum" class="form-control" id="update radioNum" placeholder="update member radioNum">
+              </div><br/>
+
+              <div class="member">
+                <label for="member stationNum">Add Station Number Here</label>
+                <input type="text" v-model="updatedMember.stationNum" class="form-control" id="update stationNum" placeholder="update member stationNum">
+              </div><br/>
+
+              <div class="member">
+                <label for="member IsValid">Add isActive Here</label>
+                <input type="radio" v-model="updatedMember.isActive" class="form-control" id="update isActive" placeholder="update member isActive" id="Yes" value ="Yes">
+                <label> Yes </label>
+                <input type="radio" v-model="updatedMember.isActive" id="No" value ="No">
+                <label> No </label>
+              </div><br/>
+
+
+              <input type="submit" value="update member" class="button"  id="submitUpdateMember">
+            </form>
           </div>
+        </div>
         </main>
 
 
