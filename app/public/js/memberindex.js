@@ -15,6 +15,7 @@ var app = new Vue({
       isActive: "",
     }],
 
+
     newMember: {
       PersonID: "",
       firstName:"",
@@ -27,7 +28,18 @@ var app = new Vue({
       radioNum: "",
       stationNum: "",
       isActive: "",
+    },
+
+    selectedMember: {
+
+
+
+    },
+    updatedMember:{
+
     }
+  },
+
 
   },
 
@@ -77,6 +89,67 @@ newMemberData() {
    }
  }
  },
+
+ updateMember () {
+   console.log('populating' + this.selectedMember);
+     this.updatedMember.PersonID = (this.selectedMember);
+     fetch('api/members/memberupdate.php', {
+       method:'POST',
+       body: JSON.stringify(this.updatedmember),
+       headers: {
+         "Content-Type": "application/json; charset=utf-8"
+       }
+     })
+     .then( response => response.json() )
+     .then( json => {
+       console.log("Returned from post:", json);
+       this.certs = json;
+       this.updatedMember = this.updatedMemberData();
+     });
+     alert('Member Updated!')
+     console.log("Creating (POSTing)...!");
+     console.log(this.updatedcert);
+   },
+   updatedMemberData() {
+     return {
+       PersonID: "",
+       firstName:"",
+       lastName: "",
+       DOB: "",
+       Address: "",
+       Email: "",
+       Position: "",
+       startDate: "",
+       radioNum: "",
+       stationNum: "",
+       isActive: "",
+     }
+   },
+
+
+del (index) {
+   //this.certs(index.CertificationID);
+   fetch('api/members/memberdelete.php', {
+     method:'POST',
+     body: JSON.stringify(index),
+     headers: {
+       "Content-Type": "application/json; charset=utf-8"
+  }
+
+
+  })
+
+  .then(this.fetchMember());
+
+
+
+}
+
+
+
+
+},
+
     created(){
       this.fetchMember();
     }
