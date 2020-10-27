@@ -33,18 +33,17 @@ $stmt->execute([
   $_POST['Position'],
   $_POST['startDate'],
   $_POST['radioNum'],
-  $_POST['stationNum']
+  $_POST['stationNum'],
   $_POST['isActive']
 ]);
 
 $pk = $db->lastInsertId();
 
-// If needed, get auto-generated PK from DB
-// $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
+// If needed, get auto-generated PK from DB $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
 
 // Step 4: Output
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
-header('Location: ../members/');
+header('Location: ../members/memberindex.php?PersonID=' . $pk);
 ?>
