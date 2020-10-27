@@ -38,6 +38,8 @@ $stmt->execute([
   $_POST['radioNum']
   $_POST['radioNum']
   $_POST['isActive']
+  $_POST['PersonID']
+
 ]);
 
 // If needed, get auto-generated PK from DB

@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -120,12 +119,12 @@
 
             <div class="form-group">
               <label for="NewMemberRadioNum">Radio Number</label>
-              <input type="text" v-model="newMember.radioNum" id="newMemberRadioNum" placeholder="#b10">
+              <input type="number" v-model="newMember.radioNum" id="newMemberRadioNum" placeholder="#b10">
             </div>
 
             <div class="form-group">
               <label for="newMemberStationNum">Station Number</label>
-              <input type="number" v-model="newMember.stationNum" class="form-control" id="newMemberStationNum" placeholder="10">
+              <input type="text" v-model="newMember.stationNum" class="form-control" id="newMemberStationNum" placeholder="10">
             </div>
 
             <div class="form-group">
@@ -195,12 +194,12 @@
               </div><br/>
 
               <div class="member">
-                <label for="member IsValid">Add isActive Here</label>
-                <input type="radio" v-model="updatedMember.isActive" class="form-control" id="update isActive" placeholder="update member isActive" id="Yes" value ="Yes">
+                <label for="NewMemberIsActive">Is Active?</label>
+                <input type="radio" v-model="updatedMember.isActive" id="Yes" value ="Yes">
                 <label> Yes </label>
                 <input type="radio" v-model="updatedMember.isActive" id="No" value ="No">
                 <label> No </label>
-              </div><br/>
+              </div>
 
 
               <input type="submit" value="update member" class="button"  id="submitUpdateMember">

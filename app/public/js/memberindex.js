@@ -86,7 +86,7 @@ newMemberData() {
      stationNum: "",
      isActive: "",
    }
- 
+
  },
 
  updateMember () {
@@ -94,7 +94,7 @@ newMemberData() {
      this.updatedMember.PersonID = (this.selectedMember);
      fetch('api/members/memberupdate.php', {
        method:'POST',
-       body: JSON.stringify(this.updatedmember),
+       body: JSON.stringify(this.updatedMember),
        headers: {
          "Content-Type": "application/json; charset=utf-8"
        }
@@ -102,12 +102,12 @@ newMemberData() {
      .then( response => response.json() )
      .then( json => {
        console.log("Returned from post:", json);
-       this.certs = json;
+       this.members = json;
        this.updatedMember = this.updatedMemberData();
      });
      alert('Member Updated!')
      console.log("Creating (POSTing)...!");
-     console.log(this.updatedcert);
+     console.log(this.updatedMember);
    },
    updatedMemberData() {
      return {
@@ -118,6 +118,7 @@ newMemberData() {
        Address: "",
        Email: "",
        Position: "",
+       Phone: "",
        startDate: "",
        radioNum: "",
        stationNum: "",
