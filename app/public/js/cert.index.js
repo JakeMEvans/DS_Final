@@ -67,14 +67,24 @@ var app = new Vue({
 
 
    del (index) {
-        this.$delete(this.certs, index);
+        //this.certs(index.CertificationID);
         fetch('api/certifications/certificationdelete.php', {
-          method:'DELETE',
+          method:'POST',
+          body: JSON.stringify(index),
           headers: {
             "Content-Type": "application/json; charset=utf-8"
        }
+       
 
- })
+       })
+       .then(this.fetchccert());
+ //.then(response => response.json())
+ //.then(json = > {
+//   console.log("Returned from post",json);
+//   this.newcert = json;
+//});
+
+
 }
 
 

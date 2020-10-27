@@ -58,8 +58,3 @@ methods: {
       .then( json => {
         this.memberList = json;
         console.log(json)}
-      );
-
-      this.newMemberForm = this.newMemberData();
-      }
-    })

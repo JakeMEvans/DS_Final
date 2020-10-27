@@ -19,13 +19,12 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'DELETE FROM Certification WHERE CertificationID = ?'
-);
+  'DELETE FROM Certification WHERE CertificationID = ?');
 
 try {
-  $stmt->execute(
-      $_POST['CertificationID'],
-  );
+  $stmt->execute([
+    $_POST['CertificationID']
+  ]);
 }
 
 catch (PDOException $ex) {
@@ -42,5 +41,5 @@ catch (PDOException $ex) {
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
-header('Location: ../certifications/');
+header('Location: ../certifications/?CertificationID=' . $_POST['CertificationID']);
 ?>
