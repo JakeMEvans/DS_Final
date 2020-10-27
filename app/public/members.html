@@ -20,10 +20,10 @@
               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="dataentrymembers.html">View Members</a>
+              <a class="nav-link" href="members.html">View Members</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="dataentrycertifications.html">Certifications</a>
+              <a class="nav-link" href="certifications.html">Certifications</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="reports.html">Member Reports</a>
@@ -37,7 +37,7 @@
       <h3>List of all Members</h3>
 
       <div class="container-fluid">
-        <div class="row" id="ocfrPage">
+        <div class="row" id="memberPage">
 
           <div class="members">
             <table class="table table-light table-striped" id="memberTable">
@@ -74,57 +74,75 @@
             </table>
 
           </div><br/>
-          
-        <div id="memberPage">
-          <form method="post" id="newMemberForm" v-on:submit.prevent="handleNewMemberForm">
-            <div class="form-group">
-              <label for="newMemberFirstName">First Name</label>
+
+          <form method="post" id="newMemberForm" v-on:submit.prevent="createMember()">
+            <div class="member">
+              <label for="newMemberFirstName">Create New Member Below <br> First Name </label>
               <input type="text" v-model="newMember.firstName" class="form-control" id="newMemberFirstName" placeholder="Jane">
             </div>
-            <div class="form-group">
+
+            <div class="member">
               <label for="newMemberLastName">Last Name</label>
               <input type="text" v-model="newMember.lastName" class="form-control" id="newMemberLastName" placeholder="Doe">
             </div>
-            <div class="form-group">
+
+            <div class="member">
               <label for="newMemberDOB">DOB</label>
               <input type="text" v-model="newMember.DOB" class="form-control" id="newMemberDOB" placeholder="1980-11-07">
             </div>
-            <div class="form-group">
+
+            <div class="member">
               <label for="newMemberAddress">Address</label>
               <input type="text" v-model="newMember.Address" class="form-control" id="newMemberAddress" placeholder="123 Main Street">
             </div>
+
             <div class="form-group">
               <label for="newMemberEmail">Email</label>
               <input type="text" v-model="newMember.Email" class="form-control" id="newMemberEmail" placeholder="jdoe@gmail.com">
             </div>
+
+            <div class="form-group">
+              <label for="newMemberPhone">Phone</label>
+              <input type="tel" v-model="newMember.Phone" class="form-control" id="newMemberPhone" placeholder="630-454-7879">
+            </div>
+
             <div class="form-group">
               <label for="newMemberPosition">Position</label>
               <input type="text" v-model="newMember.Position" class="form-control" id="newMemberPosition" placeholder="EMT">
             </div>
+
             <div class="form-group">
               <label for="newMemberstartDate">Start Date</label>
               <input type="text" v-model="newMember.startDate" class="form-control" id="newMemberstartDate" placeholder="2010-11-07">
             </div>
+
             <div class="form-group">
               <label for="NewMemberRadioNum">Radio Number</label>
               <input type="text" v-model="newMember.radioNum" id="newMemberRadioNum" placeholder="#b10">
             </div>
+
             <div class="form-group">
               <label for="newMemberStationNum">Station Number</label>
               <input type="number" v-model="newMember.stationNum" class="form-control" id="newMemberStationNum" placeholder="10">
             </div>
+
             <div class="form-group">
               <label for="NewMemberIsActive">Is Active?</label>
               <input type="radio" v-model="newMember.isActive" id="Yes" value ="Yes">
-              <label for "Yes"> Yes </label>
+              <label> Yes </label>
               <input type="radio" v-model="newMember.isActive" id="No" value ="No">
-              <label for "No"> No </label>
+              <label> No </label>
             </div>
+
             <button type="submit" class="btn btn-primary" id ="submitNewMember">Create</button>
 
           </form>
 
-
+          <form method = "post" v-on:submit.prevent="updatemember()" id="updateMemberForm">
+            <div class="members">
+              <label for="newMemberFirstName">Update Member Below</label>
+              <input type="number" v-model="selectedmember" class="form-control" id="updateMemberLastName">
+            </div><br/>
 
           </div>
         </main>
