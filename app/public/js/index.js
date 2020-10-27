@@ -1,25 +1,8 @@
 var app = new Vue({
   el: '#ocfrPage',
   data: {
-      certList: [],
-      cmList: [],
       memberList: [],
-      newCertificationForm: {},
-      newMemberForm:{}
-  },
-
-  methods: {
-    newCertificationData() {
-      return {
-        CertificationID: "",
-        certAgency: "",
-        certificationName: "",
-        expirationDate: "",
-      }
-    },
-
-    newMemberData() {
-      return {
+      newMemberForm:{
         personID: "",
         firstName:"",
         lastName: "",
@@ -30,10 +13,12 @@ var app = new Vue({
         startDate: "",
         radioNum: "",
         stationNum: "",
-        isActive: "",
-      }
-    },
-
+        isActive: ""
+  }
+ },
+methods:{
+  
+}
   // handleNewCertificationForm: ( evt ) {
   //     console.log("Certication form submitted");
   //
@@ -53,6 +38,7 @@ var app = new Vue({
   //     });
   //   },
 
+<<<<<<< HEAD
     handleNewMemberForm ( evt ) {
       console.log("Member form submitted!");
       fetch('api/members/memberpost.php', {
@@ -125,3 +111,25 @@ var app = new Vue({
     this.newMemberForm = this.newMemberData();
       }
     });
+=======
+// methods: {
+//     handleNewMemberForm ( evt ) {
+//       console.log("Member form submitted!");
+//       fetch('api/members/memberpost.php', {
+//         method: 'POST',
+//         body: JSON.stringify(this.newMemberForm),
+//         headers: {
+//           "Content-Type": "application/json; charset=utf-8",
+//           "Accept": "application/json"
+//         }
+//       })
+//       .then( response => response.json() )
+//       .then( json => {
+//         console.log("Returned from post:", json);
+//         this.memberList = json;
+//         this.newMemberForm = this.newMemberData();
+//       });
+//     }
+//   },
+// })
+>>>>>>> 773f276fb2d5de80717947b6aeb1d9e051ce9c02
