@@ -35,7 +35,7 @@
     <main>
       <div class="container-fluid">
       <h3>Member View</h3>
-      <div id="ocfrPage">
+      <div id="memberPage">
           <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <a href="dataentrymembersCreate.html">
@@ -60,7 +60,7 @@
                           <th> Active </th>
                       </tr>
                     </thead>
-                    <tbody = id"memberTableBody" v-for" member in memberList">
+                    <tbody id="memberTableBody" v-for="member in members">
                       <tr>
                         <td class ="firstName"> First Name: {{member.firstName}}</td>
                         <td class="lastName"> Last Name: {{member.lastName}}</td>
@@ -171,6 +171,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/memberindex.js"></script>
     </body>
   </html>

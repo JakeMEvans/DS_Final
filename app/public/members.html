@@ -13,29 +13,32 @@
     <title>Our Members</title>
     </head>
     <body>
-      <nav class="navbar navbar-expand-md">
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dataentrymembers.html">View Members</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dataentrycertifications.html">Certifications</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="reports.html">Member Reports</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#">OCFR App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="members.html">View Members</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certifications.html">Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reports.html">Member Reports</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <main>
       <h3>Member View</h3>
         <div id="memberPage">
-
           <form method="post" id="newMemberForm" v-on:submit.prevent="handleNewMemberForm">
             <div class="form-group">
               <label for="newMemberFirstName">First Name</label>
@@ -83,16 +86,9 @@
             <button type="submit" class="btn btn-primary" id ="submitNewMember">Create</button>
 
           </form>
-        </div>
-        <br>
 
-        <div class="card shadow mb-4" id="ocfrPage">
-          <div class="card-header py-3">
-          <h3>Updated List of Members</h3>
-          </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable, ocfrPage">
+          <h3>List of all Members</h3>
+          <table class="memberTable" id="memberTable">
             <thead>
               <tr data-sort-method="thead">
                   <th> First Name </th>
@@ -107,26 +103,24 @@
                   <th> Active </th>
               </tr>
             </thead>
-            <tbody = id"memberTableBody" v-for" member in members">
+            <tbody id="memberTableBody" v-for="member in members">
               <tr>
-                <td class ="firstName"> First Name: {{ member.firstName }}</td>
-                <td class="lastName"> Last Name: {{ member.lastName }}</td>
-                <td class="DOB"> DOB: {{ member.DOB }}</td>
-                <td class="Address"> Address: {{ member.Address }}</td>
-                <td class="Email"> Last Name: {{ member.Email }}</td>
-                <td class="Position"> Position: {{ member.Position }}</td>
-                <td class="startDate"> Start Date: {{ member.startDate }}</td>
-                <td class ="radioNum"> Radio Number: {{ member.radioNum }}</td>
-                <td class ="stationNum"> Station Number: {{ member.stationNum }}</td>
-                <td class="isActive"> Is Active: {{ member.isActive }}</td>
+                <td class ="firstName"> First Name: {{member.firstName}}</td>
+                <td class="lastName"> Last Name: {{member.lastName}}</td>
+                <td class="DOB"> DOB: {{member.DOB}}</td>
+                <td class="Address"> Address: {{member.Address}}</td>
+                <td class="Email"> Last Name: {{member.Email}}</td>
+                <td class="Position"> Position: {{member.Position}}</td>
+                <td class="startDate"> Start Date: {{member.startDate}}</td>
+                <td class ="radioNum"> Radio Number: {{member.radioNum}}</td>
+                <td class ="stationNum"> Station Number: {{member.stationNum}}</td>
+                <td class="isActive"> Is Active: {{member.isActive}}</td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
-    </div>
-    </main>
+
+          </div>
+        </main>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
