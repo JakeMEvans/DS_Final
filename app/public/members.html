@@ -13,31 +13,68 @@
     <title>Our Members</title>
     </head>
     <body>
-    <nav class="navbar navbar-expand-md">
-      <a class="navbar-brand" href="#">OCFR App</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="members.html">View Members</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="certifications.html">Certifications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="reports.html">Member Reports</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+        <nav class="navbar navbar-expand-md">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dataentrymembers.html">View Members</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dataentrycertifications.html">Certifications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reports.html">Member Reports</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     <main>
       <h3>Member View</h3>
+
+      <h3>List of all Members</h3>
+
+      <div class="container-fluid">
+        <div class="row" id="ocfrPage">
+
+          <div class="members">
+            <table class="table table-light table-striped" id="memberTable">
+              <thead>
+                <tr data-sort-method="thead">
+                    <th> First Name </th>
+                    <th> Last Name </th>
+                    <th> DOB </th>
+                    <th> Address </th>
+                    <th> Email </th>
+                    <th> Phone </th>
+                    <th> Position </th>
+                    <th> StartDate </th>
+                    <th> Radio Number </th>
+                    <th> Station Number </th>
+                    <th> Active </th>
+                </tr>
+              </thead>
+              <tbody id="memberTableBody" v-for="member in members">
+                <tr>
+                  <td class ="firstName"> First Name: {{member.firstName}}</td>
+                  <td class="lastName"> Last Name: {{member.lastName}}</td>
+                  <td class="DOB"> DOB: {{member.DOB}}</td>
+                  <td class="Address"> Address: {{member.Address}}</td>
+                  <td class="Email"> Email: {{member.Email}}</td>
+                  <td class="Phone"> Phone: {{member.Phone}}</td>
+                  <td class="Position"> Position: {{member.Position}}</td>
+                  <td class="startDate"> Start Date: {{member.startDate}}</td>
+                  <td class ="radioNum"> Radio Number: {{member.radioNum}}</td>
+                  <td class ="stationNum"> Station Number: {{member.stationNum}}</td>
+                  <td class="isActive"> Is Active: {{member.isActive}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div><br/>
+          
         <div id="memberPage">
           <form method="post" id="newMemberForm" v-on:submit.prevent="handleNewMemberForm">
             <div class="form-group">
@@ -87,37 +124,7 @@
 
           </form>
 
-          <h3>List of all Members</h3>
-          <table class="memberTable" id="memberTable">
-            <thead>
-              <tr data-sort-method="thead">
-                  <th> First Name </th>
-                  <th> Last Name </th>
-                  <th> DOB </th>
-                  <th> Address </th>
-                  <th> Email </th>
-                  <th> Position </th>
-                  <th> StartDate </th>
-                  <th> Radio Number </th>
-                  <th> Station Number </th>
-                  <th> Active </th>
-              </tr>
-            </thead>
-            <tbody id="memberTableBody" v-for="member in members">
-              <tr>
-                <td class ="firstName"> First Name: {{member.firstName}}</td>
-                <td class="lastName"> Last Name: {{member.lastName}}</td>
-                <td class="DOB"> DOB: {{member.DOB}}</td>
-                <td class="Address"> Address: {{member.Address}}</td>
-                <td class="Email"> Last Name: {{member.Email}}</td>
-                <td class="Position"> Position: {{member.Position}}</td>
-                <td class="startDate"> Start Date: {{member.startDate}}</td>
-                <td class ="radioNum"> Radio Number: {{member.radioNum}}</td>
-                <td class ="stationNum"> Station Number: {{member.stationNum}}</td>
-                <td class="isActive"> Is Active: {{member.isActive}}</td>
-              </tr>
-            </tbody>
-          </table>
+
 
           </div>
         </main>
