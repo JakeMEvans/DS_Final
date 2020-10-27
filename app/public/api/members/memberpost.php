@@ -29,6 +29,7 @@ $stmt->execute([
   $_POST['DOB'],
   $_POST['Address'],
   $_POST['Email'],
+  $_POST['Phone'],
   $_POST['Position'],
   $_POST['startDate'],
   $_POST['radioNum'],
