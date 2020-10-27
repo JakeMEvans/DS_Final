@@ -124,4 +124,4 @@ var app = new Vue({
     this.newCertificationForm = this.newCertificationData();
     this.newMemberForm = this.newMemberData();
       }
-        })
+    });
