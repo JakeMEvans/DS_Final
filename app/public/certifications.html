@@ -98,23 +98,23 @@
               <form method = "post" v-on:submit.prevent="updatecert()" id="updateCertForm">
                 <div class="certs">
                   <label for="certification id">Update Certification Below</label>
-                  <input type="number" v-model="updatecert.CertificationID" class="form-control" id="updatecertId" placeholder="update cert id">
+                  <input type="number" v-model="selectedcert" class="form-control" id="updatecertId" placeholder="update cert id">
                 </div><br/>
 
 
                 <div class="certs">
                   <label for="certification agency">Add Agency Here</label>
-                  <input type="text" v-model="updatecert.certAgency" class="form-control" id="updatecertAgency" placeholder="update cert agency">
+                  <input type="text" v-model="updatedcert.certAgency" class="form-control" id="updatecertAgency" placeholder="update cert agency">
                 </div><br/>
 
                 <div class="certs">
                   <label for="certification name">Add Name Here</label>
-                  <input type="text" v-model="updatecert.certificationName" class="form-control" id="updatecertName" placeholder="updatecert name">
+                  <input type="text" v-model="updatedcert.certificationName" class="form-control" id="updatecertName" placeholder="updatecert name">
                 </div><br/>
 
                 <div class="certs">
                   <label for="certification expdate">Add Expiration Date Here</label>
-                  <input type="date" v-model="updatecert.expirationDate" class="form-control" id="updatecertExpdate" placeholder="update cert exp date">
+                  <input type="date" v-model="updatedcert.expirationDate" class="form-control" id="updatecertExpdate" placeholder="update cert exp date">
                 </div><br/>
 
 

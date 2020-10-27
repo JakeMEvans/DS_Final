@@ -10,10 +10,19 @@ var app = new Vue({
     }],
     newcert: {
 
-      CertificationID:'',
+
       certAgency:'',
       certificationName: '',
       expirationDate:''
+    },
+
+    selectedcert: {
+
+
+
+    },
+    updatedcert:{
+
     }
   },
 
@@ -34,7 +43,6 @@ var app = new Vue({
 
 
     createcert(){
-        this.newcert.CertificationID = (this.newcert.CertificationID).toLowerCase();
         fetch('api/certifications/certificationpost.php', {
           method:'POST',
           body: JSON.stringify(this.newcert),
@@ -45,7 +53,7 @@ var app = new Vue({
         .then( response => response.json() )
         .then( json => {
           console.log("Returned from post:", json);
-          this.certs.push(json[json.length -1]);
+          this.certs.push(json[0]);
           this.newcert = this.newcertData();
         });
         alert('Certification Added!')
@@ -62,10 +70,11 @@ var app = new Vue({
 
 
       updatecert () {
-          this.updatecert.CertificationID = (this.updatecert.CertificationID);
+        console.log('populating' + this.selectedcert);
+          this.updatedcert.CertificationID = (this.selectedcert);
           fetch('api/certifications/certificationupdate.php', {
             method:'POST',
-            body: JSON.stringify(this.updatecert),
+            body: JSON.stringify(this.updatedcert),
             headers: {
               "Content-Type": "application/json; charset=utf-8"
             }
@@ -73,20 +82,22 @@ var app = new Vue({
           .then( response => response.json() )
           .then( json => {
             console.log("Returned from post:", json);
-            this.certs.push(json[json.length -1]);
-            this.updatecert = this.updatecertData();
+            this.certs = json;
+            this.updatedcert = this.updatedcertData();
           });
           alert('Certification Updated!')
           console.log("Creating (POSTing)...!");
-          console.log(this.updatecert);
+          console.log(this.updatedcert);
         },
-        updatecertData() {
+        updatedcertData() {
           return {
+            CertificationID:"",
             certAgency: "",
             certificationName: "",
             expirationDate: ""
           }
         },
+
 
    del (index) {
         //this.certs(index.CertificationID);
