@@ -24,7 +24,7 @@
             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="members.html">View Members</a>
+            <a class="nav-link" href="dataentrymembers.html">View Members</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="certifications.html">Certifications</a>
@@ -57,12 +57,12 @@
                     </tr>
                   </thead>
 
-                  <tbody  id="certTableBody" v-for = "item, cert in certs">
+                  <tbody  id="certTableBody" v-for = "cert in certs">
                     <tr >
-                      <td > <button @click="del(cert)">X</button>{{ item.CertificationID }} </td>
-                      <td >{{ item.certAgency }}</td>
-                      <td >{{ item.certificationName }}</td>
-                      <td >{{ item.expirationDate }}</td>
+                      <td > <button v-on:click="del(cert)">X</button>{{ cert.CertificationID }} </td>
+                      <td >{{ cert.certAgency }}</td>
+                      <td >{{ cert.certificationName }}</td>
+                      <td >{{ cert.expirationDate }}</td>
                     </tr>
                   </tbody>
               </table>
