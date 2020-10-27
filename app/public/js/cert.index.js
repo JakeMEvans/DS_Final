@@ -48,6 +48,7 @@ var app = new Vue({
           this.certs.push(json[json.length -1]);
           this.newcert = this.newcertData();
         });
+        alert('Certification Added!')
         console.log("Creating (POSTing)...!");
         console.log(this.newcert);
       },
@@ -60,11 +61,32 @@ var app = new Vue({
       },
 
 
-//    del (index) {
-//
-//   this.$delete(this.certs, index);
-// }
-
+      updatecert () {
+          this.updatecert.CertificationID = (this.updatecert.CertificationID);
+          fetch('api/certifications/certificationupdate.php', {
+            method:'POST',
+            body: JSON.stringify(this.updatecert),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( response => response.json() )
+          .then( json => {
+            console.log("Returned from post:", json);
+            this.certs.push(json[json.length -1]);
+            this.updatecert = this.updatecertData();
+          });
+          alert('Certification Updated!')
+          console.log("Creating (POSTing)...!");
+          console.log(this.updatecert);
+        },
+        updatecertData() {
+          return {
+            certAgency: "",
+            certificationName: "",
+            expirationDate: ""
+          }
+        },
 
    del (index) {
         //this.certs(index.CertificationID);
@@ -74,15 +96,12 @@ var app = new Vue({
           headers: {
             "Content-Type": "application/json; charset=utf-8"
        }
-       
+
 
        })
+
        .then(this.fetchccert());
- //.then(response => response.json())
- //.then(json = > {
-//   console.log("Returned from post",json);
-//   this.newcert = json;
-//});
+
 
 
 }
