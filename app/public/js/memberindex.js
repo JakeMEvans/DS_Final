@@ -41,7 +41,6 @@ var app = new Vue({
   },
 
 
-  },
 
   methods: {
     fetchMember(){
@@ -87,7 +86,7 @@ newMemberData() {
      stationNum: "",
      isActive: "",
    }
- }
+ 
  },
 
  updateMember () {
@@ -150,7 +149,7 @@ del (index) {
 
 },
 
-    created(){
-      this.fetchMember();
+  created(){
+    this.fetchMember();
     }
   });

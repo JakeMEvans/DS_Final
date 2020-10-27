@@ -43,6 +43,7 @@
             <table class="table table-light table-striped" id="memberTable">
               <thead>
                 <tr data-sort-method="thead">
+                    <th> ID </th>
                     <th> First Name </th>
                     <th> Last Name </th>
                     <th> DOB </th>
@@ -58,6 +59,7 @@
               </thead>
               <tbody id="memberTableBody" v-for="member in members">
                 <tr>
+                  <td class ="PersonID"><button v-on:click="del(member)">X</button> ID: {{member.PersonID}}</td>
                   <td class ="firstName"> First Name: {{member.firstName}}</td>
                   <td class="lastName"> Last Name: {{member.lastName}}</td>
                   <td class="DOB"> DOB: {{member.DOB}}</td>
