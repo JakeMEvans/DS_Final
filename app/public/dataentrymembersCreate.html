@@ -90,13 +90,13 @@
         </div>
         <br>
 
-        <div class="card shadow mb-4" id="ocfrPage">
+        <div class="card shadow mb-4" id="memberPage">
           <div class="card-header py-3">
           <h3>Updated List of Members</h3>
           </div>
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable, ocfrPage">
+            <table class="table table-bordered" id="dataTable, memberPage">
             <thead>
               <tr data-sort-method="thead">
                   <th> First Name </th>
@@ -111,7 +111,7 @@
                   <th> Active </th>
               </tr>
             </thead>
-            <tbody = id"memberTableBody" v-for" member in members">
+            <tbody id="memberTableBody" v-for="member in members">
               <tr>
                 <td class ="firstName"> First Name: {{ member.firstName }}</td>
                 <td class="lastName"> Last Name: {{ member.lastName }}</td>
