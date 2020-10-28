@@ -38,35 +38,98 @@
   <body>
 
 
-      <div class="container-fluid">
-        <div class="row" id="certpage">
 
-              <div class="certs">
+
+      <!-- <div class="container-fluid">
+        <div class="row" id="usercertpage">
+
+              <div class="usercerts">
                 <table id="certTable" class="table table-light table-striped">
 
                   <thead>
                     <tr>
-                      <th>cert ID</th>
+                      <th>Member ID</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Certification ID</th>
                       <th>cert Agency</th>
                       <th>cert Name</th>
                       <th>cert exp date</th>
+
                     </tr>
                   </thead>
 
-                  <tbody  id="certTableBody" v-for = "cert in certs">
+                  <tbody  id="certTableBody" v-for = "usercert in usercerts">
                     <tr >
-                      <td > <button v-on:click="del(cert)">X</button>{{ cert.CertificationID }} </td>
-                      <td >{{ cert.certAgency }}</td>
-                      <td >{{ cert.certificationName }}</td>
-                      <td >{{ cert.expirationDate }}</td>
+                      <td >{{ usercert.PersonID }} </td>
+                      <td >{{ usercert.first_name }}</td>
+                      <td >{{ usercert.certificationName }}</td>
+                      <td >{{ usercert.CertificationID }}</td>
+                      <td >{{ usercert.first_name }}</td>
+                      <td >{{ usercert.certificationName }}</td>
+                      <td >{{ usercert.expirationDate }}</td>
                     </tr>
                   </tbody>
               </table>
-
-
               </div><br/>
+            </div>
+          </div>
+ -->
 
-              <form method = "post" v-on:submit.prevent="createcert()" id="newCertForm">
+ <div class="container-fluid">
+   <div class="row" id="usercertpage">
+
+         <div class="usercerts">
+
+
+
+           <div id="usercerts">
+             <h1>Select Certfications Name</h1>
+             <select v-model="usercerts.certificationName">
+               <option v-for="(value, key) in usercerts" :value="usercert"   > {{value.certificationName }}</option>
+             </select>
+
+
+
+           <table id="certTable" class="table table-light table-striped">
+
+             <thead>
+               <tr>
+                 <th>Member ID</th>
+
+                 <th>Certification ID </th>
+
+                 <th>cert exp date</th>
+
+               </tr>
+             </thead>
+
+             <tbody  id="certTableBody" v-for = "usercert in usercerts">
+               <tr >
+                 <td >{{ usercert.PersonID }} </td>
+
+                 <td >{{ usercert.CertificationID  }}</td>
+
+                 <td >{{ usercert.expirationDate }}</td>
+               </tr>
+
+
+             </tbody>
+         </table>
+
+
+
+
+
+         </div><br/>
+       </div>
+     </div>
+
+   </div>
+
+
+
+              <!-- <form method = "post" v-on:submit.prevent="createcert()" id="newCertForm">
                 <div class="certs">
                   <label for="certification id">Add New Certification Below</label>
                   <input type="number" v-model="newcert.CertificationID" class="form-control" id="certId" placeholder="cert id">
@@ -91,50 +154,17 @@
 
                 <input type="submit" value="Create cert" class="button"  id="submitNewCert">
               </form>
-
-
-
-
-              <form method = "post" v-on:submit.prevent="updatecert()" id="updateCertForm">
-                  <div class="certs">
-                    <label for="certification id">Update Certification Below</label>
-                    <input type="number" v-model="selectedcert" class="form-control" id="updatecertId" placeholder="update cert id">
-                 </div><br/>
-
-
-                 <div class="certs">
-                    <label for="certification agency">Add Agency Here</label>
-                   <input type="text" v-model="updatedcert.certAgency" class="form-control" id="updatecertAgency" placeholder="update cert agency">
-                 </div><br/>
-
-                 <div class="certs">
-                  <label for="certification name">Add Name Here</label>
-                   <input type="text" v-model="updatedcert.certificationName" class="form-control" id="updatecertName" placeholder="updatecert name">
-                 </div><br/>
-
-                 <div class="certs">
-                   <label for="certification expdate">Add Expiration Date Here</label>
-                   <input type="date" v-model="updatedcert.expirationDate" class="form-control" id="updatecertExpdate" placeholder="update cert exp date">
-                   </div><br/>
-
-                  <input type="submit" value="update cert" class="button"  id="submitUpdateCert">
-                </form>
-             </div>
-           </div>
-
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-            <script src="js/cert.index.js"></script>
+ -->
 
 
 
 
 
-
-
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+          <script src="js/cviewreport.js"></script>
 
 
       </body>
