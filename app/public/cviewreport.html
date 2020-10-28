@@ -40,6 +40,7 @@
 
 
 
+
       <!-- <div class="container-fluid">
         <div class="row" id="usercertpage">
 
@@ -84,10 +85,21 @@
 
 
            <div id="usercerts">
-             <h1>Select Certfications Name</h1>
-             <select v-model="usercerts.certificationName">
+             <h1>Select Person ID</h1>
+             <!-- <select v-model="usercerts.certificationName">
                <option v-for="(value, key) in usercerts" :value="usercert"   > {{value.certificationName }}</option>
-             </select>
+             </select> -->
+
+             <form method = "post" v-on:submit.prevent="updatecert()" id="updateCertForm">
+               <div class="certs">
+                 <label for="person id">Select Person ID Below</label>
+                 <input type="number" v-model="selectedcert" class="form-control" id="updatepersonId" placeholder="update person id">
+               </div><br/>
+
+
+               <input type="submit" value="Update Member-Cert List" class="button"  id="submitNewCert">
+
+             </form>
 
 
 
@@ -159,7 +171,7 @@
 
 
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

@@ -75,41 +75,37 @@ FOREIGN KEY (PersonID) REFERENCES Person(PersonID),
 FOREIGN KEY (CertificationID) REFERENCES Certification(CertificationID)
 );
 
+
+
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (1,  'Allen', 'Shemming',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (1,  'Allen', 'Shemming',15, 'Pro Board', 'Fire Service Instructor', '2022-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (2, 'Rozamond', 'Fishley',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (2, 'Rozamond', 'Fishley',15, 'Pro Board', 'Fire Service Instructor', '2022-06-14');
-
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (3, 'Delinda', 'Ahrenius',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (4, 'Constance', 'Bolesworth',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (5, 'Gussi', 'Wooder',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (6, 'Grethel', 'Deshon',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
-
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (7, 'Adore', 'Malloy',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (8, 'Doralyn', 'Donnell',16, 'Pro Board', 'Fire Service Instructor', '2022-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (9, 'Boothe', 'Clem',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (10, 'Wadsworth','Couling',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (11, 'Edwin', 'Petegrew',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (12, 'Urbano', 'Starkey',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
-
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (13, 'Jackson', 'Messiter',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (14, 'Stepha', 'Dorro',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (15, 'Nolana', 'Dzeniskevich',16, 'Pro Board', 'Fire Pole Polisher', '1994-06-14');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (2, 'Rozamond', 'Fishley',16, 'Pro Board', 'Fire Pole Polisher', '2022-06-14');
-
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (3, 'Delinda', 'Ahrenius',4, 'NFPA', 'Certified Fire Inspector', '2024-03-08');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (4, 'Constance', 'Bolesworth',4, 'NFPA', 'Certified Fire Inspector', '2024-03-08');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (5, 'Gussi', 'Wooder',4, 'NFPA', 'Certified Fire Inspector', '2024-03-08');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (6, 'Grethel', 'Deshon',4, 'NFPA', 'Certified Fire Inspector', '2024-03-08');
-
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (7, 'Adore', 'Malloy',11, 'SD Miramar', 'Confined Space and Rescue 2', '2025-06-13');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (8, 'Doralyn', 'Donnell',11, 'SD Miramar', 'Confined Space and Rescue 2', '2025-06-13');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (9, 'Boothe', 'Clem',11, 'SD Miramar', 'Confined Space and Rescue 2', '2025-06-13');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (10, 'Wadsworth','Couling',11, 'SD Miramar', 'Confined Space and Rescue 2', '2025-06-13');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (11, 'Edwin', 'Petegrew',11, 'SD Miramar', 'Confined Space and Rescue 2', '2025-06-13');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (12, 'Urbano', 'Starkey',11, 'SD Miramar', 'Confined Space and Rescue 2', '2025-06-13');
-
-  insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (13, 'Jackson', 'Messiter',8, 'FFC', 'Firefighter 2', '2022-09-04');
-  insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (14, 'Stepha', 'Dorro',8, 'FFC', 'Firefighter 2', '2022-09-04');
-  insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (15, 'Nolana', 'Dzeniskevich',8, 'FFC', 'Firefighter 2', '2022-09-04');
-  insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (2, 'Rozamond', 'Fishley',8, 'FFC', 'Firefighter 2', '2022-09-04');
+insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (13, 'Jackson', 'Messiter',8, 'FFC', 'Firefighter 2', '2022-09-04');
+insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (14, 'Stepha', 'Dorro',8, 'FFC', 'Firefighter 2', '2022-09-04');
+insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (15, 'Nolana', 'Dzeniskevich',8, 'FFC', 'Firefighter 2', '2022-09-04');
+insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (2, 'Rozamond', 'Fishley',8, 'FFC', 'Firefighter 2', '2022-09-04');
