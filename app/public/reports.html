@@ -32,7 +32,65 @@
     </div>
   </nav>
 
+
+
   <div class="container-fluid">
+    <div class="row" id="reportPage">
+
+          <div class="members">
+
+
+
+            <div id="members">
+              <h1>Member Resports</h1>
+              <!-- <select v-model="usercerts.certificationName">
+                <option v-for="(value, key) in usercerts" :value="usercert"   > {{value.certificationName }}</option>
+              </select> -->
+
+              <form method = "post"  id="updateMemberForm">
+                <div class="newMember">
+                  <label for="station num">Select Person by Station Num Below</label>
+                  <select v-model="selectedstationNum" class="form-control" id="updatestationNum" >
+                    <option v-for="member in members" v-bind:value="mem.stationNum">
+                      {{mem.stationNum}}
+
+                    </option>
+                  </select>
+                </div><br/>
+
+
+              </form>
+
+
+
+            <table id="memberTable" class="table table-light table-striped">
+                  <thead class>
+                    <tr data-sort-method="thead">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Station</th>
+                  <th>Radio Number</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+
+              <tbody id="reportPage" v-for="mem in members" v-if="person.stationNum == selectedstationNum">
+                <tr>
+                  <td> {{ mem.firstName }}&nbsp;{{ mem.lastName }}</td>
+                  <td>{{ mem.stationNum }}</td>
+                  <td>{{ mem.radioNum }}</td>
+                  <td>{{ mem.Email }} </td>
+
+                </tr>
+              </tbody>
+              </table>
+          </div><br/>
+        </div>
+      </div>
+
+    </div>
+  <!-- <div class="container-fluid">
     <div class="row" id="memberPage">
 
       <div class="mems">
@@ -59,7 +117,7 @@
       </tbody>
       </table>
     </div>
-  </div>
+  </div> -->
     <!-- END content -->
 
     <!-- Footer? Insert here -->
@@ -75,6 +133,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/memberindex.js"></script>
+    <script src="js/reportindex.js"></script>
   </body>
   </html>

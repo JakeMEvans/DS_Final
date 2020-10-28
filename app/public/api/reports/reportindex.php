@@ -12,7 +12,7 @@ $vars = [];
 if (isset($_GET['PersonID'])) {
   // This is an example of a parameterized query
   $sql = 'SELECT * FROM Person WHERE PersonID = ?';
-  $sql = 'SELECT * FROM Person WHERE firstName = ?';
+  // $sql = 'SELECT * FROM Person WHERE firstName = ?';
   // $sql = 'SELECT * FROM Person WHERE lastName = ?';
   // $sql = 'SELECT * FROM Person WHERE DOB = ?';
   // $sql = 'SELECT * FROM Person WHERE Address = ?';
@@ -36,4 +36,3 @@ $json = json_encode($person, JSON_PRETTY_PRINT);
 // Step 4: Output
 header('Content-Type: application/json');
 echo $json;
-?>

@@ -1,17 +1,7 @@
 var app = new Vue({
-  el: '#memberPage',
+  el: '#reportPage',
   data:{
-    mems: [{
-      firstName:"",
-      lastName: "",
-      stationNum: "",
-      radioNum: "",
-      Email: "",
-      Position: "",
-      startDate: "",
-      radioNum: "",
-      isActive: "",
-    }],
+    members: [],
 
 
     newMember: {
@@ -28,6 +18,9 @@ var app = new Vue({
       isActive: "",
     },
 
+    selectedstationNum: null
+  },
+
     selectedMember: {
 
 
@@ -35,7 +28,6 @@ var app = new Vue({
     },
     updatedMember:{
 
-    }
   },
 
 
