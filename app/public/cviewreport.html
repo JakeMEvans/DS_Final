@@ -90,14 +90,17 @@
                <option v-for="(value, key) in usercerts" :value="usercert"   > {{value.certificationName }}</option>
              </select> -->
 
-             <form method = "post" v-on:submit.prevent="updatecert()" id="updateCertForm">
+             <form method = "post"  id="updateCertForm">
                <div class="certs">
                  <label for="person id">Select Person ID Below</label>
-                 <input type="number" v-model="selectedcert" class="form-control" id="updatepersonId" placeholder="update person id">
+                 <select v-model="selectedpersonid" class="form-control" id="updatepersonId" >
+                   <option v-for="mem in members" v-bind:value="mem.PersonID">
+                     {{mem.lastName}}, {{mem.firstName}} ({{mem.PersonID}})
+
+                   </option>
+                 </select>
                </div><br/>
 
-
-               <input type="submit" value="Update Member-Cert List" class="button"  id="submitNewCert">
 
              </form>
 
@@ -111,16 +114,20 @@
 
                  <th>Certification ID </th>
 
+                 <th> Cert Name </th>
+
                  <th>cert exp date</th>
 
                </tr>
              </thead>
 
-             <tbody  id="certTableBody" v-for = "usercert in usercerts">
-               <tr >
+             <tbody  id="certTableBody" >
+               <tr v-for="usercert in usercerts" v-if="usercert.PersonID == selectedpersonid">
                  <td >{{ usercert.PersonID }} </td>
 
                  <td >{{ usercert.CertificationID  }}</td>
+
+                 <td >{{ usercert.certificationName  }}</td>
 
                  <td >{{ usercert.expirationDate }}</td>
                </tr>
@@ -177,6 +184,7 @@
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
           <script src="js/cviewreport.js"></script>
+
 
 
       </body>

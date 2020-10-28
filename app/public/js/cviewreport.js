@@ -14,14 +14,11 @@ var app = new Vue({
     }],
 
     membercerts:[],
+    members: [],
     updatedcert:{
 
     },
-    selectedcert: {
-
-
-
-    }
+    selectedpersonid: null
 
 
 
@@ -74,6 +71,16 @@ var app = new Vue({
           }
         },
 
+        fetchMember(){
+            fetch("api/members/memberindex.php")
+            .then( response => response.json() )
+            .then ( json => {
+              this.members = json;
+              console.log(this.members);
+      });
+
+    },
+
 
 
 
@@ -94,6 +101,7 @@ var app = new Vue({
 
      created(){
        this.fetchuserccert();
+       this.fetchMember();
 
      }
 

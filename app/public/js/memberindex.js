@@ -1,19 +1,7 @@
 var app = new Vue({
   el: '#memberPage',
   data:{
-    members: [{
-      PersonID: "",
-      firstName:"",
-      lastName: "",
-      DOB: "",
-      Address: "",
-      Email: "",
-      Position: "",
-      startDate: "",
-      radioNum: "",
-      stationNum: "",
-      isActive: "",
-    }],
+    members: [],
 
 
     newMember: {
