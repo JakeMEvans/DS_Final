@@ -1,17 +1,15 @@
 var app = new Vue({
   el: '#memberPage',
   data:{
-    members: [{
-      PersonID: "",
+    mems: [{
       firstName:"",
       lastName: "",
-      DOB: "",
-      Address: "",
+      stationNum: "",
+      radioNum: "",
       Email: "",
       Position: "",
       startDate: "",
       radioNum: "",
-      stationNum: "",
       isActive: "",
     }],
 

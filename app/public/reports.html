@@ -48,12 +48,12 @@
         </tr>
       </thead>
 
-      <tbody id="memberPage" v-for="member in mems">
+      <tbody id="memberPage" v-for="member in members">
         <tr>
-          <td> {{ mem.firstName }}&nbsp;{{ member.lastName }}</td>
-          <td>{{ mem.stationNum }}</td>
-          <td>{{ mem.radioNum }}</td>
-          <td>{{ mem.Email }} </td>
+          <td> {{ member.firstName }}&nbsp;{{ member.lastName }}</td>
+          <td>{{ member.stationNum }}</td>
+          <td>{{ member.radioNum }}</td>
+          <td>{{ member.Email }} </td>
 
         </tr>
       </tbody>
