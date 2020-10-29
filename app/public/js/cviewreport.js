@@ -58,15 +58,6 @@ var app = new Vue({
 
 
 
-      // viewcerts: function() {
-      //   this.membercerts= [];
-      //     for( var i = 0, len = this.usercerts.length; i <len;i++){
-      //
-      //
-      //
-      //     }
-      //   },
-
 
     },
 
