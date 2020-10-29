@@ -41,41 +41,7 @@
 
 
 
-      <!-- <div class="container-fluid">
-        <div class="row" id="usercertpage">
 
-              <div class="usercerts">
-                <table id="certTable" class="table table-light table-striped">
-
-                  <thead>
-                    <tr>
-                      <th>Member ID</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Certification ID</th>
-                      <th>cert Agency</th>
-                      <th>cert Name</th>
-                      <th>cert exp date</th>
-
-                    </tr>
-                  </thead>
-
-                  <tbody  id="certTableBody" v-for = "usercert in usercerts">
-                    <tr >
-                      <td >{{ usercert.PersonID }} </td>
-                      <td >{{ usercert.first_name }}</td>
-                      <td >{{ usercert.certificationName }}</td>
-                      <td >{{ usercert.CertificationID }}</td>
-                      <td >{{ usercert.first_name }}</td>
-                      <td >{{ usercert.certificationName }}</td>
-                      <td >{{ usercert.expirationDate }}</td>
-                    </tr>
-                  </tbody>
-              </table>
-              </div><br/>
-            </div>
-          </div>
- -->
 
  <div class="container-fluid">
    <div class="row" id="usercertpage">
@@ -86,16 +52,14 @@
 
            <div id="usercerts">
              <h1>Select Certfication ID</h1>
-             <!-- <select v-model="usercerts.certificationName">
-               <option v-for="(value, key) in usercerts" :value="usercert"   > {{value.certificationName }}</option>
-             </select> -->
+
 
              <form method = "post"  id="updatePersForm">
                <div class="certifications">
                  <label for="certification id">Select Certification ID Below</label>
                  <select v-model="selectedcertificationid" class="form-control" id="updatecertificationId" >
-                   <option v-for="foocert in foocerts" v-bind:value="foocert.CertificiationID">
-                      {{foocert.certificationName}} ({{foocert.CertificationID}})
+                   <option v-for="foocert in foocerts" v-bind:value="foocert.CertificationID">
+                      {{foocert.certificationName}}, ({{foocert.CertificationID}})
 
                    </option>
                  </select>
@@ -110,9 +74,10 @@
 
              <thead>
                <tr>
-                 <th>Member ID</th>
 
                  <th>Certification ID </th>
+
+                 <th>Member ID</th>
 
                  <th>Certification Expiration Date </th>
 
@@ -125,9 +90,9 @@
 
              <tbody  id="persTableBody" >
                <tr v-for="usercert in usercerts" v-if="usercert.CertificationID == selectedcertificationid" >
-                 <td >{{ usercert.PersonID }} </td>
-
                  <td >{{ usercert.CertificationID  }}</td>
+
+                 <td >{{ usercert.PersonID }} </td>
 
                  <td >{{ usercert.expirationDate  }}</td>
 
@@ -152,32 +117,6 @@
 
 
 
-              <!-- <form method = "post" v-on:submit.prevent="createcert()" id="newCertForm">
-                <div class="certs">
-                  <label for="certification id">Add New Certification Below</label>
-                  <input type="number" v-model="newcert.CertificationID" class="form-control" id="certId" placeholder="cert id">
-                </div><br/>
-
-
-                <div class="certs">
-                  <label for="certification agency">Add Agency Here</label>
-                  <input type="text" v-model="newcert.certAgency" class="form-control" id="certAgency" placeholder="cert agency">
-                </div><br/>
-
-                <div class="certs">
-                  <label for="certification name">Add Name Here</label>
-                  <input type="text" v-model="newcert.certificationName" class="form-control" id="certName" placeholder="cert name">
-                </div><br/>
-
-                <div class="certs">
-                  <label for="certification expdate">Add Expiration Date Here</label>
-                  <input type="date" v-model="newcert.expirationDate" class="form-control" id="certExpdate" placeholder="cert exp date">
-                </div><br/>
-
-
-                <input type="submit" value="Create cert" class="button"  id="submitNewCert">
-              </form>
- -->
 
 
 

@@ -14,8 +14,7 @@ var app = new Vue({
     }],
 
 
-
-    foocerts:[],
+    foocerts: [],
 
     selectedcertificationid: null
 
@@ -40,7 +39,6 @@ var app = new Vue({
         });
 
       },
-
 
 
 
