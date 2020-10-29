@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- my custom CSS goes here -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Our Certifications</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="members.html">View Members</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="certifications.html">Certifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reports.html">Member Reports</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+    <title>Certification Reports</title>
+  </head>
+
+  <body>
+
+
+
+
+
+
+
+
+
+           <div class="container-fluid">
+             <div class="row" id="usercertpage">
+
+                   <div class="usercerts">
+
+
+
+                     <div id="usercerts">
+                       <h1>{{ timestamp }}</h1>
+                       <h1>Select Certfication ID</h1>
+
+
+
+                       <form method = "post"  id="updatePersForm">
+                         <div class="certifications">
+                           <label for="certification id">Select Certification ID Below</label>
+                           <select v-model="selectedcertificationid" class="form-control" id="updatecertificationId" >
+                             <option v-for="boot in timestamp" v-bind:value="boot">
+                                {{ timestamp }}
+
+                             </option>
+                           </select>
+                         </div><br/>
+
+
+                       </form>
+
+
+
+                     <table id="persTable" class="table table-light table-striped">
+
+                       <thead>
+                         <tr>
+
+                           <th>Certification ID </th>
+
+                           <th>Member ID</th>
+
+                           <th>Certification Name</th>
+
+                           <th>Certification Expiration Date </th>
+
+                           <th> Member First Name </th>
+
+                           <th>Member Last Name</th>
+
+                         </tr>
+                       </thead>
+
+                       <tbody  id="persTableBody" >
+                         <tr v-for="usercert in usercerts" v-if="usercert.expirationDate < selectedcertificationid" >
+                           <td >{{ usercert.CertificationID  }}</td>
+
+                           <td >{{ usercert.PersonID }} </td>
+
+                           <td >{{ usercert.certificationName }} </td>
+
+                           <td >{{ usercert.expirationDate  }}</td>
+
+                           <td >{{ usercert.first_name  }}</td>
+
+                           <td >{{ usercert.last_name }}</td>
+                         </tr>
+
+
+                       </tbody>
+                   </table>
+
+
+
+
+
+                   </div><br/>
+                 </div>
+               </div>
+
+             </div>
+
+
+
+
+
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+                    <script src="js/pviewreport.js"></script>
+
+
+
+                </body>
+                </html>

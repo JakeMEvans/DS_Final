@@ -2,6 +2,7 @@ var app = new Vue({
   el: '#usercertpage',
   data:{
 
+    timestamp: "",
     usercerts: [{
 
       PersonID:'',
@@ -53,6 +54,13 @@ var app = new Vue({
 
     },
 
+    getNow: function() {
+        const today = new Date();
+        const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        const dateTime = date;
+        this.timestamp = dateTime;
+    },
 
 
 
@@ -65,7 +73,7 @@ var app = new Vue({
      created(){
        this.fetchuserccert();
        this.fetchccert();
-
+       setInterval(this.getNow, 1000);
      }
 
 
