@@ -13,10 +13,11 @@ var app = new Vue({
       expirationDate:''
     }],
 
+    membercerts:[],
 
-    members: [],
+    foocerts:[],
 
-    selectedpersonid: null
+    selectedcertificationid: null
 
 
 
@@ -31,7 +32,7 @@ var app = new Vue({
 
     methods:{
       fetchuserccert(){
-        fetch('api/reports/cviewreport.php')
+        fetch('api/reports/pviewreport.php')
         .then(response => response.json())
         .then(json => {
           this.usercerts=json;
@@ -42,12 +43,14 @@ var app = new Vue({
 
 
 
-        fetchMember(){
-            fetch("api/members/memberindex.php")
-            .then( response => response.json() )
-            .then ( json => {
-              this.members = json;
-              console.log(this.members);
+
+
+    fetchccert(){
+      fetch('api/certifications/certificationindex.php')
+      .then(response => response.json())
+      .then(json => {
+        this.foocerts=json;
+        console.log(this.foocerts);
       });
 
     },
@@ -72,8 +75,7 @@ var app = new Vue({
 
      created(){
        this.fetchuserccert();
-       this.fetchMember();
-
+       this.fetchccert();
 
      }
 

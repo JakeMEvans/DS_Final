@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- my custom CSS goes here -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Our Certifications</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="members.html">View Members</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="certifications.html">Certifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reports.html">Member Reports</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+    <title>Certification Reports</title>
+  </head>
+
+  <body>
+
+
+
+
+
+      <!-- <div class="container-fluid">
+        <div class="row" id="usercertpage">
+
+              <div class="usercerts">
+                <table id="certTable" class="table table-light table-striped">
+
+                  <thead>
+                    <tr>
+                      <th>Member ID</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Certification ID</th>
+                      <th>cert Agency</th>
+                      <th>cert Name</th>
+                      <th>cert exp date</th>
+
+                    </tr>
+                  </thead>
+
+                  <tbody  id="certTableBody" v-for = "usercert in usercerts">
+                    <tr >
+                      <td >{{ usercert.PersonID }} </td>
+                      <td >{{ usercert.first_name }}</td>
+                      <td >{{ usercert.certificationName }}</td>
+                      <td >{{ usercert.CertificationID }}</td>
+                      <td >{{ usercert.first_name }}</td>
+                      <td >{{ usercert.certificationName }}</td>
+                      <td >{{ usercert.expirationDate }}</td>
+                    </tr>
+                  </tbody>
+              </table>
+              </div><br/>
+            </div>
+          </div>
+ -->
+
+ <div class="container-fluid">
+   <div class="row" id="usercertpage">
+
+         <div class="usercerts">
+
+
+
+           <div id="usercerts">
+             <h1>Select Certfication ID</h1>
+             <!-- <select v-model="usercerts.certificationName">
+               <option v-for="(value, key) in usercerts" :value="usercert"   > {{value.certificationName }}</option>
+             </select> -->
+
+             <form method = "post"  id="updatePersForm">
+               <div class="certifications">
+                 <label for="certification id">Select Certification ID Below</label>
+                 <select v-model="selectedcertificationid" class="form-control" id="updatecertificationId" >
+                   <option v-for="cer in foocerts" v-bind:value="cer.CertificiationID">
+                      {{cer.certificationName}} ({{cer.CertificationID}})
+
+                   </option>
+                 </select>
+               </div><br/>
+
+
+             </form>
+
+
+
+           <table id="certTable" class="table table-light table-striped">
+
+             <thead>
+               <tr>
+                 <th>Member ID</th>
+
+                 <th>Certification ID </th>
+
+                 <th>Certification Expiration Date </th>
+
+                 <th> Member First Name </th>
+
+                 <th>Member Last Name</th>
+
+               </tr>
+             </thead>
+
+             <tbody  id="persTableBody" >
+               <tr v-for="usercert in usercerts" v-if="usercert.CertificationID == selectedcertificationid">
+                 <td >{{ usercert.PersonID }} </td>
+
+                 <td >{{ usercert.CertificationID  }}</td>
+
+                 <td >{{ usercert.expirationDate  }}</td>
+
+                 <td >{{ usercert.first_name  }}</td>
+
+                 <td >{{ usercert.last_name }}</td>
+               </tr>
+
+
+             </tbody>
+         </table>
+
+
+
+
+
+         </div><br/>
+       </div>
+     </div>
+
+   </div>
+
+
+
+              <!-- <form method = "post" v-on:submit.prevent="createcert()" id="newCertForm">
+                <div class="certs">
+                  <label for="certification id">Add New Certification Below</label>
+                  <input type="number" v-model="newcert.CertificationID" class="form-control" id="certId" placeholder="cert id">
+                </div><br/>
+
+
+                <div class="certs">
+                  <label for="certification agency">Add Agency Here</label>
+                  <input type="text" v-model="newcert.certAgency" class="form-control" id="certAgency" placeholder="cert agency">
+                </div><br/>
+
+                <div class="certs">
+                  <label for="certification name">Add Name Here</label>
+                  <input type="text" v-model="newcert.certificationName" class="form-control" id="certName" placeholder="cert name">
+                </div><br/>
+
+                <div class="certs">
+                  <label for="certification expdate">Add Expiration Date Here</label>
+                  <input type="date" v-model="newcert.expirationDate" class="form-control" id="certExpdate" placeholder="cert exp date">
+                </div><br/>
+
+
+                <input type="submit" value="Create cert" class="button"  id="submitNewCert">
+              </form>
+ -->
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+          <script src="js/pviewreport.js"></script>
+
+
+
+      </body>
+      </html>
