@@ -109,3 +109,5 @@ insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAge
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (14, 'Stepha', 'Dorro',8, 'FFC', 'Firefighter 2', '2022-09-04');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (15, 'Nolana', 'Dzeniskevich',8, 'FFC', 'Firefighter 2', '2022-09-04');
 insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (2, 'Rozamond', 'Fishley',8, 'FFC', 'Firefighter 2', '2022-09-04');
+
+insert into User_Certs (PersonID, first_name, last_name, CertificationID,certAgency,certificationName,expirationDate) values (5, 'Gussi', 'Wooder',12, 'IFSAC', 'Bucket Chucker Master', '1999-09-11');

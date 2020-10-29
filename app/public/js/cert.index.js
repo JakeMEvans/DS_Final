@@ -98,6 +98,24 @@ var app = new Vue({
           }
         },
 
+        del (index) {
+           //this.certs(index.CertificationID);
+           fetch('api/certifications/certificationdelete.php', {
+             method:'POST',
+             body: JSON.stringify(index),
+             headers: {
+               "Content-Type": "application/json; charset=utf-8"
+          }
+
+
+          })
+
+          .then(this.fetchccert());
+
+
+
+        },
+
 
 
 

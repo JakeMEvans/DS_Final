@@ -51,15 +51,15 @@
 
 
            <div id="usercerts">
-             <h1>Select Person ID</h1>
+             <h1>Select Certfication ID</h1>
 
 
-             <form method = "post"  id="updateCertForm">
-               <div class="certs">
-                 <label for="person id">Select Person ID Below</label>
-                 <select v-model="selectedpersonid" class="form-control" id="updatepersonId" >
-                   <option v-for="mem in members" v-bind:value="mem.PersonID">
-                     {{mem.lastName}}, {{mem.firstName}} ({{mem.PersonID}})
+             <form method = "post"  id="updatePersForm">
+               <div class="certifications">
+                 <label for="certification id">Select Certification ID Below</label>
+                 <select v-model="selectedcertificationid" class="form-control" id="updatecertificationId" >
+                   <option v-for="foocert in foocerts" v-bind:value="foocert.CertificationID">
+                      {{foocert.certificationName}}, ({{foocert.CertificationID}})
 
                    </option>
                  </select>
@@ -70,30 +70,35 @@
 
 
 
-           <table id="certTable" class="table table-light table-striped">
+           <table id="persTable" class="table table-light table-striped">
 
              <thead>
                <tr>
-                 <th>Member ID</th>
 
                  <th>Certification ID </th>
 
-                 <th> Cert Name </th>
+                 <th>Member ID</th>
 
-                 <th>cert exp date</th>
+                 <th>Certification Expiration Date </th>
+
+                 <th> Member First Name </th>
+
+                 <th>Member Last Name</th>
 
                </tr>
              </thead>
 
-             <tbody  id="certTableBody" >
-               <tr v-for="usercert in usercerts" v-if="usercert.PersonID == selectedpersonid">
-                 <td >{{ usercert.PersonID }} </td>
-
+             <tbody  id="persTableBody" >
+               <tr v-for="usercert in usercerts" v-if="usercert.CertificationID == selectedcertificationid" >
                  <td >{{ usercert.CertificationID  }}</td>
 
-                 <td >{{ usercert.certificationName  }}</td>
+                 <td >{{ usercert.PersonID }} </td>
 
-                 <td >{{ usercert.expirationDate }}</td>
+                 <td >{{ usercert.expirationDate  }}</td>
+
+                 <td >{{ usercert.first_name  }}</td>
+
+                 <td >{{ usercert.last_name }}</td>
                </tr>
 
 
@@ -121,7 +126,7 @@
           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-          <script src="js/cviewreport.js"></script>
+          <script src="js/pviewreport.js"></script>
 
 
 
