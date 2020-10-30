@@ -26,6 +26,8 @@ h2 {
 
 footer {
   align-content: center;
+  background: black;
+  color: red;
 }
 .navbar{
     border-radius: 0px
