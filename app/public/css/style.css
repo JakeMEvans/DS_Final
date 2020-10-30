@@ -23,3 +23,8 @@ p {
 h2 {
   color: firebrick;
 }
+
+.submit {
+  background: red;
+  color: white;
+}
