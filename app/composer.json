@@ -1,11 +1,13 @@
 {
-    "name": "JakeMEvans/DS_Final_Team26",
+    "name": "JakeMEvans/ds-final-team26",
     "description": "An in-class example project",
     "license": "private",
     "authors": [{
-        "name": "team26",
-      "ramsey/uuid": "^[4.1]"
+        "name": "team26"
     }],
+    "require": {
+      "ramsey/uuid": "^4.1"
+    },
     "autoload": {
         "classmap": ["class/DbConnection.php"]
     }
