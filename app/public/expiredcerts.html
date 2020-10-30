@@ -69,9 +69,9 @@
 
                        <form method = "post"  id="updatePersForm">
                          <div class="certifications">
-                           <label for="certification id">Select Certification ID Below</label>
+                           <label for="certification id">Select Today's Date Below</label>
                            <select v-model="selectedcertificationid" class="form-control" id="updatecertificationId" >
-                             <option v-for="boot in timestamp" v-bind:value="boot">
+                             <option v-for="timestamp" v-bind:value="timestamp">
                                 {{ timestamp }}
 
                              </option>
