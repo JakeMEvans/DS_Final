@@ -48,10 +48,9 @@
      <form method = "post"  id="stationfiltform">
        <div class="stations">
          <label for="station id">Select Station Number Below</label>
-         <select v-model="selectedMember" class="form-control" >
+         <select v-model="thisblankselect" class="form-control" >
            <option v-for="mem in members" v-bind:value="mem.stationNum">
              ({{mem.stationNum}})
-
            </option>
          </select>
        </div><br/>
@@ -73,7 +72,7 @@
       </thead>
 
       <tbody id="memberPage" >
-        <tr v-for="member in members" v-if="member.stationNum == selectedMember">
+        <tr v-for="member in members" v-if="member.stationNum == thisblankselect">
           <td> {{ member.firstName }}&nbsp;{{ member.lastName }}</td>
           <td>{{ member.stationNum }}</td>
           <td>{{ member.radioNum }}</td>

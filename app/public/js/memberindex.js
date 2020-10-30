@@ -4,6 +4,7 @@ var app = new Vue({
     members: [],
 
 
+
     newMember: {
       PersonID: "",
       firstName:"",
@@ -23,6 +24,8 @@ var app = new Vue({
 
 
     },
+
+    thisblankselect: null,
     updatedMember:{
 
     }
@@ -30,7 +33,14 @@ var app = new Vue({
 
 
 
+
+
   methods: {
+
+
+
+
+
     fetchMember(){
         fetch("api/members/memberindex.php")
         .then( response => response.json() )
