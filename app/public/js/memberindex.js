@@ -63,7 +63,7 @@ createMember(){
         .then ( response => response.json() )
         .then( json => {
           console.log("Returned from post:", json);
-          //this.comments = push(json[1]);
+          this.members.push(json[0]);
           this.newMember = this.newMemberData();
       });
       console.log("Creating (POSTing)...!");
