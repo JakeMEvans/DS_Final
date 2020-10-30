@@ -35,6 +35,22 @@
  <div class="container-fluid">
    <div class="row" id="memberPage">
 
+
+
+     <form method = "post"  id="stationfiltform">
+       <div class="stations">
+         <label for="station id">Select Station Number Below</label>
+         <select v-model="selectedMember" class="form-control" >
+           <option v-for="mem in members" v-bind:value="mem.stationNum">
+             ({{mem.stationNum}})
+
+           </option>
+         </select>
+       </div><br/>
+
+
+     </form>
+
       <div class="mems">
         <table class="table table-striped table-light " id="memberTable">
           <thead class = "thead">
@@ -48,8 +64,8 @@
         </tr>
       </thead>
 
-      <tbody id="memberPage" v-for="member in members">
-        <tr>
+      <tbody id="memberPage" >
+        <tr v-for="member in members" v-if="member.stationNum == selectedMember">
           <td> {{ member.firstName }}&nbsp;{{ member.lastName }}</td>
           <td>{{ member.stationNum }}</td>
           <td>{{ member.radioNum }}</td>
@@ -60,6 +76,7 @@
       </table>
     </div>
   </div>
+</div>
     <!-- END content -->
 
     <!-- Footer? Insert here -->
