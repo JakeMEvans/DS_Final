@@ -3,7 +3,7 @@
     "description": "An in-class example project",
     "license": "private",
     "authors": [{
-        "name": "Team Twenty Six"
+        "name": "team"
     }],
     "require": {
       "ramsey/uuid": "^4.1"
